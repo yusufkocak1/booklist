@@ -10,11 +10,38 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class LOGIN : Form
     {
-        public Form1()
+        
+        public LOGIN()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            userDS.userRow r;
+
+
+            if (r.userName.Equals(textBox1.Text) && r.password.Equals(textBox2.Text))
+            {
+                MessageBox.Show(r.userName);
+                
+            }
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            signInfrm sgnin_obj = new signInfrm();
+            
+            sgnin_obj.Show();
+            this.Close();
         }
     }
 }
