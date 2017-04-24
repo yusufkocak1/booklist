@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
     public partial class LOGIN : Form
     {
-        
+        public static object ConfigurationManager { get; private set; }
+
         public LOGIN()
         {
             InitializeComponent();
@@ -27,17 +23,24 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
 
+         //   string sql = ConfigurationManager.ConnectionStrings["EmployeeEntities"].ConnectionString;
 
-            SqlConnection conn = new SqlConnection(@"Data seurce=(localDB)
-/MSSQLLOCALDB;AttachDbFilename=|DataDirectoy|/booklistDB.mdf;Integrated Security=True");
 
+
+
+                 SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\booklistDB.mdf;Integrated Security=True");
+            
             conn.Open();
-            SqlCommand cmd=new SqlCommand("select * from user",conn);
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlCommand cmd=new SqlCommand("select * from [user]",conn);
+            SqlDataReader dr;
+            dr= cmd.ExecuteReader();
+
+            uyumluluk();
             while (dr.Read())
             {
+                MessageBox.Show(dr[1].ToString().Equals(textBox1.Text).ToString());
 
-                if (dr[1].ToString().Equals(textBox1.Text) && dr[2].ToString().Equals(textBox2.Text))
+                if (dr[1].ToString().Equals(textBox1.Text) && dr[2].ToString()==textBox2.Text)
                 {
                     katalogfrm katalogobj = new katalogfrm();
                     this.Hide();
@@ -47,6 +50,20 @@ namespace WindowsFormsApplication1
             
         }
 
+        private void uyumluluk()
+        {
+            while(textBox1.Text.Length<20)
+            {
+               // MessageBox.Show(textBox1.Text.Length.ToString());
+                textBox1.Text=textBox1.Text + " ";
+            }
+            while(textBox2.TextLength<20)
+            {
+                textBox2.Text = textBox2.Text + " ";
+            }
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
             signInfrm sgnin_obj = new signInfrm();
@@ -54,5 +71,7 @@ namespace WindowsFormsApplication1
             sgnin_obj.Show();
             this.Close();
         }
+
+        
     }
 }
