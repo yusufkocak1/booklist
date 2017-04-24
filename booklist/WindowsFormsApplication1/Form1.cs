@@ -22,13 +22,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-         //   string sql = ConfigurationManager.ConnectionStrings["EmployeeEntities"].ConnectionString;
-
-
-
-
-                 SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\booklistDB.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\booklistDB.mdf;Integrated Security=True");
             
             conn.Open();
             SqlCommand cmd=new SqlCommand("select * from [user]",conn);

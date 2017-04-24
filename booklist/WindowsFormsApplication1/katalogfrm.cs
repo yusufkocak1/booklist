@@ -16,5 +16,12 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void katalogfrm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'userDS.kitap' table. You can move, or remove it, as needed.
+            this.kitapTableAdapter.Fill(this.userDS.kitap);
+
+        }
     }
 }
