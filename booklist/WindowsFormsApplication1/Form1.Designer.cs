@@ -32,9 +32,10 @@
             this.login_btn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.passwordlbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // login_btn
@@ -55,6 +56,12 @@
             resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // usernamelbl
             // 
             resources.ApplyResources(this.usernamelbl, "usernamelbl");
@@ -65,26 +72,33 @@
             resources.ApplyResources(this.passwordlbl, "passwordlbl");
             this.passwordlbl.Name = "passwordlbl";
             // 
-            // label1
+            // label2
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // LOGIN
             // 
-            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.AcceptButton = this.login_btn;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordlbl);
             this.Controls.Add(this.usernamelbl);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.login_btn);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LOGIN";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LOGIN_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LOGIN_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LOGIN_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,9 +109,10 @@
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label usernamelbl;
         private System.Windows.Forms.Label passwordlbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

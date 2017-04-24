@@ -3,6 +3,7 @@
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
@@ -17,7 +18,7 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,6 +67,64 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        Boolean temp = false;
+        Point ilkkonum;
+        private Point mouseOffset;
+        private bool isMouseDown;
+
+        private void LOGIN_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+
+            {
+
+                Point mousePos = Control.MousePosition;
+
+                mousePos.Offset(mouseOffset.X, mouseOffset.Y);
+
+                Location = mousePos;
+
+            }
+        }
+
+        private void LOGIN_MouseDown(object sender, MouseEventArgs e)
+        {
+            int xOffset;
+
+            int yOffset;
+
+            if
+
+            (e.Button == MouseButtons.Left)
+
+            {
+
+                xOffset = -e.X - SystemInformation.FrameBorderSize.Width;
+
+                yOffset = -e.Y - SystemInformation.CaptionHeight -
+
+SystemInformation.FrameBorderSize.Height;
+
+                mouseOffset = new Point(xOffset, yOffset);
+
+                isMouseDown = true;
+
+            }
+        }
+
+        private void LOGIN_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+
+            {
+
+                isMouseDown = false;
+
+            }
+        }
     }
 }

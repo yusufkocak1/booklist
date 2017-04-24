@@ -84,13 +84,17 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(694, 465);
+            this.splitContainer1.Size = new System.Drawing.Size(921, 465);
             this.splitContainer1.SplitterDistance = 72;
             this.splitContainer1.TabIndex = 0;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ıdDataGridViewTextBoxColumn,
@@ -105,8 +109,11 @@
             this.dataGridView1.DataSource = this.kitapBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(694, 389);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(921, 389);
             this.dataGridView1.TabIndex = 0;
             // 
             // userDS
@@ -128,59 +135,68 @@
             this.ıdDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.ıdDataGridViewTextBoxColumn.HeaderText = "Id";
             this.ıdDataGridViewTextBoxColumn.Name = "ıdDataGridViewTextBoxColumn";
+            this.ıdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adıDataGridViewTextBoxColumn
             // 
             this.adıDataGridViewTextBoxColumn.DataPropertyName = "Adı";
             this.adıDataGridViewTextBoxColumn.HeaderText = "Adı";
             this.adıDataGridViewTextBoxColumn.Name = "adıDataGridViewTextBoxColumn";
+            this.adıDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // yazarDataGridViewTextBoxColumn
             // 
             this.yazarDataGridViewTextBoxColumn.DataPropertyName = "Yazar";
             this.yazarDataGridViewTextBoxColumn.HeaderText = "Yazar";
             this.yazarDataGridViewTextBoxColumn.Name = "yazarDataGridViewTextBoxColumn";
+            this.yazarDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // neredeDataGridViewTextBoxColumn
             // 
             this.neredeDataGridViewTextBoxColumn.DataPropertyName = "Nerede";
             this.neredeDataGridViewTextBoxColumn.HeaderText = "Nerede";
             this.neredeDataGridViewTextBoxColumn.Name = "neredeDataGridViewTextBoxColumn";
+            this.neredeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // okunmaDataGridViewCheckBoxColumn
             // 
             this.okunmaDataGridViewCheckBoxColumn.DataPropertyName = "Okunma";
             this.okunmaDataGridViewCheckBoxColumn.HeaderText = "Okunma";
             this.okunmaDataGridViewCheckBoxColumn.Name = "okunmaDataGridViewCheckBoxColumn";
+            this.okunmaDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // gorusDataGridViewTextBoxColumn
             // 
             this.gorusDataGridViewTextBoxColumn.DataPropertyName = "Gorus";
             this.gorusDataGridViewTextBoxColumn.HeaderText = "Gorus";
             this.gorusDataGridViewTextBoxColumn.Name = "gorusDataGridViewTextBoxColumn";
+            this.gorusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // basımyılıDataGridViewTextBoxColumn
             // 
             this.basımyılıDataGridViewTextBoxColumn.DataPropertyName = "Basım_yılı";
             this.basımyılıDataGridViewTextBoxColumn.HeaderText = "Basım_yılı";
             this.basımyılıDataGridViewTextBoxColumn.Name = "basımyılıDataGridViewTextBoxColumn";
+            this.basımyılıDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // yayıneviDataGridViewTextBoxColumn
             // 
             this.yayıneviDataGridViewTextBoxColumn.DataPropertyName = "yayınevi";
             this.yayıneviDataGridViewTextBoxColumn.HeaderText = "yayınevi";
             this.yayıneviDataGridViewTextBoxColumn.Name = "yayıneviDataGridViewTextBoxColumn";
+            this.yayıneviDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kapakresmiDataGridViewTextBoxColumn
             // 
             this.kapakresmiDataGridViewTextBoxColumn.DataPropertyName = "kapak_resmi";
             this.kapakresmiDataGridViewTextBoxColumn.HeaderText = "kapak_resmi";
             this.kapakresmiDataGridViewTextBoxColumn.Name = "kapakresmiDataGridViewTextBoxColumn";
+            this.kapakresmiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(366, 27);
+            this.label1.Location = new System.Drawing.Point(482, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 17;
@@ -188,7 +204,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(338, 43);
+            this.textBox1.Location = new System.Drawing.Point(450, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 16;
@@ -196,7 +212,7 @@
             // button7
             // 
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(537, 9);
+            this.button7.Location = new System.Drawing.Point(753, 9);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 54);
             this.button7.TabIndex = 15;
@@ -205,7 +221,7 @@
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(1, 9);
+            this.button6.Location = new System.Drawing.Point(11, 9);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 54);
             this.button6.TabIndex = 14;
@@ -214,7 +230,7 @@
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(163, 9);
+            this.button5.Location = new System.Drawing.Point(173, 9);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 55);
             this.button5.TabIndex = 13;
@@ -223,7 +239,7 @@
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(618, 9);
+            this.button4.Location = new System.Drawing.Point(834, 9);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 54);
             this.button4.TabIndex = 12;
@@ -232,7 +248,7 @@
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(456, 9);
+            this.button3.Location = new System.Drawing.Point(672, 10);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 54);
             this.button3.TabIndex = 11;
@@ -241,7 +257,7 @@
             // button2
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(244, 9);
+            this.button2.Location = new System.Drawing.Point(254, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 54);
             this.button2.TabIndex = 10;
@@ -250,7 +266,7 @@
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(82, 9);
+            this.button1.Location = new System.Drawing.Point(92, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 54);
             this.button1.TabIndex = 9;
@@ -261,7 +277,7 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 465);
+            this.ClientSize = new System.Drawing.Size(921, 465);
             this.Controls.Add(this.splitContainer1);
             this.Name = "katalogfrm";
             this.Text = "katalogfrm";
