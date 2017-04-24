@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,13 +26,23 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userDS.userRow r;
 
 
-            if (r.userName.Equals(textBox1.Text) && r.password.Equals(textBox2.Text))
+            SqlConnection conn = new SqlConnection(@"Data seurce=(localDB)
+/MSSQLLOCALDB;AttachDbFilename=|DataDirectoy|/booklistDB.mdf;Integrated Security=True");
+
+            conn.Open();
+            SqlCommand cmd=new SqlCommand("select * from user",conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                MessageBox.Show(r.userName);
-                
+
+                if (dr[1].ToString().Equals(textBox1.Text) && dr[2].ToString().Equals(textBox2.Text))
+                {
+                    katalogfrm katalogobj = new katalogfrm();
+                    this.Hide();
+                    katalogobj.Show();
+                }
             }
             
         }
